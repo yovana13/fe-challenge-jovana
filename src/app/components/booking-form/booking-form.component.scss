@@ -1,0 +1,58 @@
+.title {
+  text-align: center;
+}
+
+.form-container {
+  padding: 1.25rem;
+  input[type="text"],
+  input[type="email"],
+  input[type="date"] {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .submit-btn {
+    width: 100%;
+    border: none;
+    background-color: #f7941d;
+    color: white;
+    margin-top: 1rem;
+    padding: 0.625rem 0;
+    border-radius: 16px;
+    &:disabled {
+      background-color: #857977;
+    }
+  }
+
+  .error {
+    color: #9b240b;
+    font-size: 0.75rem;
+    margin: 0 0 0.5rem 0;
+  }
+  input.ng-invalid.ng-touched {
+    border: 2px solid #9b240b;
+  }
+}
+
+.info-message {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background-color: #0e4b29;
+  color: white;
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 0.625rem 0;
+  margin: 0 1.25rem;
+  border-radius: 24px;
+}
+
+.hide-info-message {
+  display: none;
+}

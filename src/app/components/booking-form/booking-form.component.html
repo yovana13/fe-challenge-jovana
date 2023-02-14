@@ -1,0 +1,36 @@
+<h2 class="title">Book your stay!</h2>
+<div class="form-container">
+   <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+   <div>
+      <input type="text" formControlName="firstName" placeholder="First Name"/>
+      <p class="error" 
+         *ngIf="bookingForm.controls['firstName'].invalid && bookingForm.controls['firstName'].touched">
+         First name is required
+      </p>
+      <input type="text" formControlName="lastName" placeholder="Last Name"/>
+      <p class="error" 
+         *ngIf="bookingForm.controls['lastName'].invalid && bookingForm.controls['lastName'].touched">
+         Last name is required
+      </p>
+      <input type="email" formControlName="email"  placeholder="Email" />
+      <p class="error" 
+         *ngIf="bookingForm.controls['email'].invalid && bookingForm.controls['email'].touched">
+         Email is required
+      </p>
+      <input type="date" formControlName="startDate"  placeholder="Check in date" />
+      <p class="error" 
+         *ngIf="bookingForm.controls['startDate'].invalid && bookingForm.controls['startDate'].touched">
+         Please select start date of your visit
+      </p>
+      <input type="date" formControlName="endDate"  placeholder="Check out date" />
+      <p class="error" 
+         *ngIf="bookingForm.controls['endDate'].invalid && bookingForm.controls['endDate'].touched">
+         Please select end date of your visit
+      </p>
+   </div>
+   <button type="submit" [disabled]="!bookingForm.valid" class="submit-btn">Book now</button>
+   </form>
+</div>
+<div class="info-message"  [ngClass]="{'hide-info-message': !showInfoMessage }">
+   <p>Booking successful! Enjoy your stay at {{hotelTitle}}.</p>
+</div>

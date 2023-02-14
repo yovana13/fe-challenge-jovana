@@ -1,0 +1,23 @@
+<div #map id="map"></div>
+<div #hotelsCarousel id="hotelsCarousel">
+   <div class="cards">
+      <ng-container *ngFor="let hotel of hotels; let i = index;">
+         <div class="card"  id="{{ 'card-' + i }}" (click)="centerCard(i)">
+            <div class="card-content">
+               <img alt="image" src="../../../assets/images/hotel-thumbnail.png" />
+               <div class="card-info">
+                  <div>
+                     <p class="address">{{hotel.address.city}} {{hotel.title}}</p>
+                     <p class="centre-distance">{{hotel.distance / 100}} km from the city center</p>
+                  </div>
+                  <div>
+                     <p class="price">£{{price}}</p>
+                     <p class="info">Design may varay</p>
+                  </div>
+               </div>
+            </div>
+            <button class="book-btn" (click)="openBookingForm(i)">Book</button>
+         </div>
+      </ng-container>
+   </div>
+</div>
